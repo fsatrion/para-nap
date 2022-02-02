@@ -1,0 +1,9 @@
+apt install python3-pip
+apt-get install -y --force-yes libssl-dev libffi-dev python-dev python-cffi
+
+pip3 install --upgrade pip
+pip3 install napalm
+pip3 show napalm
+
+pip3 install pramiko
+pip3 show paramiko
