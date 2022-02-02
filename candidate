@@ -1,0 +1,21 @@
+hostname R3
+
+interface Lo0
+ ip address 3.3.3.3 255.255.255.255
+ no shutdown
+
+interface FastEthernet1/0
+ ip address 192.168.49.1 255.255.255.0
+ no shutdown
+
+interface FastEthernet1/1
+ ip address 192.168.50.1 255.255.255.0
+ no shutdown
+
+router bgp 55
+neighbor 192.168.50.2 remote-as 35
+network 3.3.3.3 mask 255.255.255.255
+network 192.168.49.0 mask 255.255.255.0
+network 192.168.50.0 mask 255.255.255.0
+
+end
